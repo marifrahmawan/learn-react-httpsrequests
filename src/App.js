@@ -44,41 +44,6 @@ function App() {
     setIsLoading(false);
   }, [movies, isLoading, fetchMoviesHandler]);
 
-  // useEffect(() => {
-  //   const fetchMoviesHandler = async () => {
-  //     setIsLoading(true);
-  //     try {
-  //       setError(null);
-  //       const response = await fetch(
-  //         'https://react-httprequest-c9392-default-rtdb.asia-southeast1.firebasedatabase.app/movies.json'
-  //       );
-
-  //       if (!response.ok) {
-  //         throw new Error('Something went wrong!');
-  //       }
-
-  //       const data = await response.json();
-  //       const loadedMovie = [];
-
-  //       for (const key in data) {
-  //         loadedMovie.push({
-  //           id: key,
-  //           title: data[key].title,
-  //           openingText: data[key].openingText,
-  //           releaseDate: data[key].releaseDate,
-  //         });
-  //       }
-
-  //       setMovies(loadedMovie);
-  //     } catch (error) {
-  //       setError(error.message);
-  //     }
-  //   };
-
-  //   fetchMoviesHandler();
-  //   setIsLoading(false);
-  // }, [movies, isLoading]);
-
   const addMovieHandler = async (movie) => {
     await fetch(
       'https://react-httprequest-c9392-default-rtdb.asia-southeast1.firebasedatabase.app/movies.json',
